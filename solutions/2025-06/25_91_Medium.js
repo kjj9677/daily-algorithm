@@ -1,4 +1,4 @@
-// LeetCode 91. Decode Ways
+// 91. Decode Ways
 // https://leetcode.com/problems/decode-ways/
 var numDecodings = function(s) {
     if(s.startsWith('0')) return 0
