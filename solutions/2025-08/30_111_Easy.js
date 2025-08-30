@@ -1,5 +1,6 @@
 // 111. Minimum Depth of Binary Tree
 // https://leetcode.com/problems/minimum-depth-of-binary-tree/
+// 내풀이와 GPT를 이용한 두번째 풀이
 var minDepth = function(root) {
     if(!root) return 0
 
@@ -20,4 +21,21 @@ var minDepth = function(root) {
     }
 
     return answer
+};
+
+var minDepth2 = function(root) {
+  if (!root) return 0;
+
+  const q = [[root, 1]];
+  let head = 0;
+
+  while (head < q.length) {
+    const [node, d] = q[head++];
+
+    if (!node.left && !node.right) return d;
+
+    if (node.left)  q.push([node.left,  d + 1]);
+    if (node.right) q.push([node.right, d + 1]);
+  }
+  return 0;
 };
